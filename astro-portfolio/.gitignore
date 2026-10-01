@@ -26,3 +26,7 @@ pnpm-debug.log*
 # skills & tooling
 skills/
 skills-ui/
+
+# PDF source files
+*.pdf
+!public/cv/*.pdf

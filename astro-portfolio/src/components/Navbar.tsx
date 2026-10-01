@@ -92,42 +92,17 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange, content 
             </button>
           </div>
 
-          {/* CV Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setCvDropdownOpen(!cvDropdownOpen)}
+          {/* CV Direct Download Button & Optional Dropdown */}
+          <div className="relative flex items-center">
+            <a
+              href={lang === 'es' ? '/cv/Alejandro_Hernandez_CV_ES.pdf' : '/cv/Alejandro_Hernandez_CV_EN.pdf'}
+              download={lang === 'es' ? 'Alejandro_Hernandez_CV_ES.pdf' : 'Alejandro_Hernandez_CV_EN.pdf'}
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.12] text-xs font-medium text-white transition-all duration-200 focus:outline-none"
+              title={lang === 'es' ? 'Descargar CV en Español (PDF)' : 'Download English Resume (PDF)'}
             >
-              <FileText className="w-3.5 h-3.5 text-zinc-300" />
-              <span>CV</span>
-              <ChevronDown className={`w-3 h-3 text-zinc-400 transition-transform duration-200 ${cvDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            {cvDropdownOpen && (
-              <div
-                className="absolute right-0 mt-2 w-48 rounded-xl bg-zinc-900/95 backdrop-blur-xl border border-white/[0.12] p-1.5 shadow-2xl text-xs z-50 animate-in fade-in zoom-in-95 duration-150"
-                onMouseLeave={() => setCvDropdownOpen(false)}
-              >
-                <a
-                  href="/cv/Alejandro_Hernandez_CV_ES.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between px-3 py-2 rounded-lg text-zinc-200 hover:text-white hover:bg-white/[0.08] transition-colors"
-                >
-                  <span>{content.cvEs}</span>
-                  <ArrowUpRight className="w-3 h-3 text-zinc-400" />
-                </a>
-                <a
-                  href="/cv/Alejandro_Hernandez_CV_EN.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between px-3 py-2 rounded-lg text-zinc-200 hover:text-white hover:bg-white/[0.08] transition-colors"
-                >
-                  <span>{content.cvEn}</span>
-                  <ArrowUpRight className="w-3 h-3 text-zinc-400" />
-                </a>
-              </div>
-            )}
+              <FileText className="w-3.5 h-3.5 text-violet-400" />
+              <span>{content.cvBtn}</span>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -162,22 +137,12 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, onLanguageChange, content 
               Curriculum Vitae
             </div>
             <a
-              href="/cv/Alejandro_Hernandez_CV_ES.html"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={lang === 'es' ? '/cv/Alejandro_Hernandez_CV_ES.pdf' : '/cv/Alejandro_Hernandez_CV_EN.pdf'}
+              download={lang === 'es' ? 'Alejandro_Hernandez_CV_ES.pdf' : 'Alejandro_Hernandez_CV_EN.pdf'}
               className="flex items-center justify-between p-3 rounded-xl bg-white/[0.05] border border-white/[0.08] text-sm text-zinc-200"
             >
-              <span>{content.cvEs}</span>
-              <ArrowUpRight className="w-4 h-4 text-zinc-400" />
-            </a>
-            <a
-              href="/cv/Alejandro_Hernandez_CV_EN.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-3 rounded-xl bg-white/[0.05] border border-white/[0.08] text-sm text-zinc-200"
-            >
-              <span>{content.cvEn}</span>
-              <ArrowUpRight className="w-4 h-4 text-zinc-400" />
+              <span>{content.cvBtn} ({lang.toUpperCase()})</span>
+              <FileText className="w-4 h-4 text-violet-400" />
             </a>
           </div>
         </div>

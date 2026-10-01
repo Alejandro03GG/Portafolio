@@ -63,9 +63,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, content }) => {
 
           {/* CV Direct Button */}
           <a
-            href={lang === 'es' ? '/cv/Alejandro_Hernandez_CV_ES.html' : '/cv/Alejandro_Hernandez_CV_EN.html'}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={lang === 'es' ? '/cv/Alejandro_Hernandez_CV_ES.pdf' : '/cv/Alejandro_Hernandez_CV_EN.pdf'}
+            download={lang === 'es' ? 'Alejandro_Hernandez_CV_ES.pdf' : 'Alejandro_Hernandez_CV_EN.pdf'}
             className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-transparent hover:bg-white/[0.05] border border-white/[0.08] text-zinc-400 hover:text-zinc-200 font-medium text-sm transition-all duration-200"
           >
             <FileDown className="w-4 h-4" />

@@ -19,3 +19,7 @@ dist/
 # Editor directories
 .idea/
 .vscode/
+
+# PDF source files
+*.pdf
+!**/public/cv/*.pdf

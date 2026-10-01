@@ -146,8 +146,8 @@ export const PORTFOLIO_DATA: Record<Language, PortfolioContent> = {
       projects: 'Proyectos',
       contact: 'Contacto',
       cvBtn: 'Ver CV',
-      cvEn: 'CV en Inglés (HTML)',
-      cvEs: 'CV en Español (HTML)',
+      cvEs: 'CV en Español (PDF)',
+      cvEn: 'CV en Inglés (PDF)',
     },
     hero: {
       badge: 'Full Stack & AI Integrations · Bucaramanga, Colombia',
@@ -234,8 +234,8 @@ export const PORTFOLIO_DATA: Record<Language, PortfolioContent> = {
       projects: 'Projects',
       contact: 'Contact',
       cvBtn: 'View Resume',
-      cvEn: 'Resume in English (HTML)',
-      cvEs: 'Resume in Spanish (HTML)',
+      cvEs: 'Spanish Resume (PDF)',
+      cvEn: 'English Resume (PDF)',
     },
     hero: {
       badge: 'Full Stack & AI Integrations · Bucaramanga, Colombia',
