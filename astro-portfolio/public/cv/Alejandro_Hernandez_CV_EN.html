@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Hernández Lara - CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cv-page {
+            width: 210mm;
+            min-height: 297mm;
+            background: #ffffff;
+            display: grid;
+            grid-template-columns: 1fr 0.85fr;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* ===== LEFT COLUMN ===== */
+        .left-column {
+            padding: 36px 30px 36px 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        /* ===== RIGHT COLUMN ===== */
+        .right-column {
+            background: #1a1a2e;
+            color: #ffffff;
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        /* ===== HEADER (LEFT) ===== */
+        .header-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a1a2e;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .header-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6c63ff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .header-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+            font-size: 9.5px;
+            color: #555;
+        }
+
+        .header-contact span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .header-contact .icon {
+            width: 12px;
+            height: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a1a2e;
+            border-bottom: 2px solid #6c63ff;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        .section-title-light {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            border-bottom: 2px solid #6c63ff;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .experience-item {
+            margin-bottom: 18px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .experience-company {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1a1a2e;
+            text-transform: uppercase;
+        }
+
+        .experience-date {
+            font-size: 10px;
+            font-weight: 600;
+            color: #6c63ff;
+        }
+
+        .experience-role {
+            font-size: 11px;
+            font-weight: 600;
+            color: #6c63ff;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-list li {
+            font-size: 9.5px;
+            color: #444;
+            line-height: 1.6;
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+
+        .experience-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 4px;
+            height: 4px;
+            background: #6c63ff;
+            border-radius: 50%;
+        }
+
+        /* ===== ABOUT ME (RIGHT) ===== */
+        .about-text {
+            font-size: 10px;
+            color: #cccccc;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* ===== EDUCATION (RIGHT) ===== */
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .education-degree {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .education-school {
+            font-size: 10px;
+            color: #aaaaaa;
+            margin-top: 2px;
+        }
+
+        .education-details {
+            font-size: 9.5px;
+            color: #888888;
+            margin-top: 2px;
+        }
+
+        /* ===== LANGUAGES (RIGHT) ===== */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .language-name {
+            font-size: 11px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .language-level {
+            font-size: 10px;
+            color: #aaaaaa;
+        }
+
+        /* ===== SKILLS (RIGHT) ===== */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .skills-list li {
+            font-size: 10px;
+            color: #cccccc;
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .skills-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 6px;
+            height: 6px;
+            background: #6c63ff;
+            border-radius: 50%;
+        }
+
+        /* ===== PROJECTS (RIGHT) ===== */
+        .project-item {
+            margin-bottom: 14px;
+        }
+
+        .project-name {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .project-subtitle {
+            font-size: 9.5px;
+            color: #6c63ff;
+            font-weight: 600;
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-list li {
+            font-size: 9.5px;
+            color: #bbbbbb;
+            line-height: 1.6;
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+
+        .project-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 4px;
+            height: 4px;
+            background: #6c63ff;
+            border-radius: 50%;
+        }
+
+        /* ===== LINKS ===== */
+        .contact-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 4px;
+        }
+
+        .contact-link {
+            font-size: 9px;
+            color: #6c63ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .cv-page {
+                box-shadow: none;
+                width: 100%;
+                min-height: auto;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-page">
+    <!-- ===== LEFT COLUMN ===== -->
+    <div class="left-column">
+        <!-- HEADER -->
+        <div>
+            <div class="header-name">Alejandro Hernández Lara</div>
+            <div class="header-title">Full Stack Developer</div>
+            <div class="header-contact">
+                <span>📞 (+57) 311-523-7212</span>
+                <span>✉️ ahernandezlara03@gmail.com</span>
+            </div>
+            <div class="contact-links">
+                <a class="contact-link" href="https://alejandrohernandez.vercel.app/" target="_blank">alejandrohernandez.vercel.app</a>
+                <a class="contact-link" href="https://www.linkedin.com/in/alejandro-hernandez-lara-657795127" target="_blank">linkedin.com/in/alejandro-hernandez-lara</a>
+            </div>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div>
+            <div class="section-title">Experience</div>
+
+            <!-- AI BUSINESS -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-company">AI Business S.L</span>
+                    <span class="experience-date">2025 - 2026</span>
+                </div>
+                <div class="experience-role">Full Stack Developer</div>
+                <ul class="experience-list">
+                    <li>Developed full-stack web applications across frontend and backend environments.</li>
+                    <li>Trained and fine-tuned local AI models for document recognition and processing using RAG techniques.</li>
+                    <li>Designed and built enterprise-grade applications for document and workflow management integrated with third-party ERP systems.</li>
+                    <li>Created intelligent automation agents to streamline business operations and task assignments.</li>
+                    <li>Developed custom integration connectors for ERP and CRM platforms.</li>
+                    <li>Managed and maintained Linux-based server infrastructure.</li>
+                    <li>Participated in client-facing meetings to gather requirements and deliver solutions.</li>
+                    <li>Performed QA testing to ensure software quality and reliability.</li>
+                </ul>
+            </div>
+
+            <!-- INDRA -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-company">Indra Company</span>
+                    <span class="experience-date">2025 - 2025</span>
+                </div>
+                <div class="experience-role">Backend Developer</div>
+                <ul class="experience-list">
+                    <li>Developed and maintained backend services using Java in enterprise environments.</li>
+                    <li>Implemented container orchestration and deployment workflows with Kubernetes.</li>
+                    <li>Implemented new features and optimized existing systems for performance and scalability.</li>
+                    <li>Managed and operated Linux-based server environments for application deployment.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== RIGHT COLUMN ===== -->
+    <div class="right-column">
+        <!-- ABOUT ME -->
+        <div>
+            <div class="section-title-light">About Me</div>
+            <p class="about-text">
+                Full Stack Developer focused on building scalable software and integrating AI-driven solutions into business workflows. Skilled in designing modern interfaces, developing robust backend architectures, and working with enterprise platforms. Passionate about software architecture, automation, and creating technology that delivers real value to organizations.
+            </p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div>
+            <div class="section-title-light">Education</div>
+            <div class="education-item">
+                <div class="education-degree">Software Analysis and Development Technologist</div>
+                <div class="education-school">SENA</div>
+                <div class="education-details">2024 - 2026 · Colombia</div>
+            </div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div>
+            <div class="section-title-light">Languages</div>
+            <div class="language-item">
+                <span class="language-name">English</span>
+                <span class="language-level">Basic</span>
+            </div>
+            <div class="language-item">
+                <span class="language-name">Spanish</span>
+                <span class="language-level">Native</span>
+            </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div>
+            <div class="section-title-light">Skills</div>
+            <ul class="skills-list">
+                <li>Full Stack Development</li>
+                <li>Software Architecture & System Design</li>
+                <li>Next.js, React, Tailwind CSS</li>
+                <li>Python, FastAPI</li>
+                <li>PostgreSQL (Advanced Data Modeling & Stored Procedures)</li>
+                <li>REST API Development & Endpoint Design</li>
+                <li>AI Integration (OpenAI, Local Models, RAG)</li>
+                <li>Authentication & Security (JWT)</li>
+                <li>SaaS & Multi-Tenant Architecture</li>
+            </ul>
+        </div>
+
+        <!-- PROJECTS -->
+        <div>
+            <div class="section-title-light">Projects</div>
+
+            <div class="project-item">
+                <div class="project-name">Compralo | SaaS Platform</div>
+                <div class="project-subtitle">Full Stack Development</div>
+                <ul class="project-list">
+                    <li>Developed a SaaS platform adaptable to multiple clients.</li>
+                    <li>Designed and implemented a multi-tenant architecture with isolated databases.</li>
+                    <li>Implemented authentication and authorization using JWT.</li>
+                    <li>Developed an administrative dashboard with advanced analytics for decision-making.</li>
+                    <li>Designed modern and user-friendly interfaces focused on usability and operational efficiency.</li>
+                    <li>Integrated AI-powered features to support administrative and business processes.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
