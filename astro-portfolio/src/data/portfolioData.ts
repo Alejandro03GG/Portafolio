@@ -52,6 +52,7 @@ export interface LearningPillar {
     en: string;
   };
   tags: string[];
+  learningPillarsTags?: string[];
 }
 
 export interface PortfolioContent {
