@@ -1,0 +1,9 @@
+{
+  "name": "portafolio-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix astro-portfolio run dev",
+    "build": "npm --prefix astro-portfolio run build",
+    "preview": "npm --prefix astro-portfolio run preview"
+  }
+}

@@ -407,6 +407,40 @@ export const LEARNING_PILLARS: LearningPillar[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
+    id: 'local-vulnerability-ai',
+    title: 'Local Vulnerability AI',
+    featured: true,
+    image: '/images/local-vuln-ai.png',
+    githubUrl: 'https://github.com/Alejandro03GG/Local-Vulnerabilty-Ai',
+    subtitle: {
+      es: 'Plataforma open source local-first de análisis de vulnerabilidades (SCA), escaneo de contenedores y triaje con IA',
+      en: 'Open-source, local-first Software Composition Analysis (SCA), container inspection, and local AI triage platform',
+    },
+    description: {
+      es: 'Local Vulnerability AI es una plataforma integral de ciberseguridad y análisis de dependencias (SCA) diseñada para ejecutarse 100% on-premise, eliminando el riesgo de exfiltración de código propietario o manifiestos hacia nubes externas. Unifica inteligencia de amenazas (OSV, NIST NVD CVE 2.0 y CISA KEV) mediante lógica matemática estricta de intervalos de versión (PEP 440, SemVer, Debian, Alpine, RPM) sin alucinaciones de IA, e incorpora escaneo estático de imágenes Docker/OCI, motor de políticas declarativas (.vuln-ai.yaml), exportación SARIF/CycloneDX/SPDX y triaje contextual asistido por LLMs locales (Ollama/llama3.2).',
+      en: 'Local Vulnerability AI is an open-source, local-first cybersecurity and Software Composition Analysis (SCA) platform engineered to run 100% locally on-premise, preventing proprietary code, manifests, and container archives from leaking to third-party clouds. It correlates threat intelligence (OSV, NIST NVD CVE 2.0, CISA KEV) using exact interval math across package ecosystems (PEP 440, SemVer, Debian, Alpine, RPM) avoiding generative hallucinations, featuring static OCI/Docker container layer scanning, declarative policy enforcement (.vuln-ai.yaml), SARIF/CycloneDX/SPDX exports, and private local LLM triage via Ollama (llama3.2).',
+    },
+    highlights: {
+      es: [
+        'Arquitectura 100% Local-First: Cero exfiltración de código fuente, manifiestos o archivos de contenedores a servicios cloud; análisis íntegramente ejecutado en local o runner CI/CD privado.',
+        'Motor Determinista Multi-Fuente: Correlación canónica de catálogos CISA KEV, OSV y NIST NVD con resolución matemática exacta de versiones sin falsos positivos por alucinaciones generativas.',
+        'Inspección Estática de Imágenes y Dockerfiles: Análisis de archivos OCI/Docker (.tar), extracción de capas, resolución de paquetes de SO (Alpine APK, Debian DPKG, RPM) y lexer AST de Dockerfiles.',
+        'Triaje con IA Contextual en Localhost: Integración opcional con modelos de lenguaje locales (Ollama con llama3.2) y heurísticas SystemOne para explicaciones de remediación comprensibles sin costos de API.',
+        'Motor de Políticas y Estándares DevSecOps: Reglas declarativas en YAML (.vuln-ai.yaml), control de supresiones temporales auditables y generación estándar de reportes SARIF 2.1.0, CycloneDX 1.5 y SPDX 2.3.',
+        'Consola de Operaciones en React & CLI Python: Dashboard web oscuro con React 18, TypeScript, grafos interactivos de dependencias, paleta ⌘K, y CLI automatizable en Python 3.12+ con FastAPI.',
+      ],
+      en: [
+        '100% Local-First Security Architecture: Zero code or container archive exfiltration to external clouds; scans and evaluations execute strictly on local workstations or private CI/CD runners.',
+        'Deterministic Multi-Source Engine: Canonical advisory catalog correlating CISA KEV, OSV, and NIST NVD CVE 2.0 with exact interval math (PEP 440, SemVer, Debian, Alpine, RPM) avoiding generative hallucinations.',
+        'Static Container Image & Dockerfile Parsing: Inspects OCI and Docker (.tar) layers, whiteout handling, OS package resolution (APK, DPKG, RPM), and multi-stage Dockerfile AST analysis.',
+        'Localhost Contextual AI Triage: Optional local LLM support via Ollama (llama3.2) and SystemOne heuristics for plain-English remediation guidance with zero API fees or privacy exposure.',
+        'Declarative Policy Engine & Industry Standards: Granular .vuln-ai.yaml security policies, time-bound auditable suppressions, and native SARIF 2.1.0, CycloneDX 1.5, and SPDX 2.3 exports.',
+        'Modern React Console & Python CLI: Full-featured dark-mode operations UI with React 18, TypeScript, interactive dependency graphs, ⌘K command menu, coupled with a high-performance Python 3.12+ FastAPI backend and CLI.',
+      ],
+    },
+    technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'Docker', 'Ollama', 'CISA KEV', 'NIST NVD', 'SARIF', 'Tailwind CSS', 'SQLite', 'DevSecOps'],
+  },
+  {
     id: 'compralo',
     title: 'Compralo | SaaS Platform',
     featured: true,
